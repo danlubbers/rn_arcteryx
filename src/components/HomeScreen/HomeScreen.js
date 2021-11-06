@@ -1,22 +1,17 @@
 import React from 'react';
 import {ImageBackground, View} from 'react-native';
 import styles from './HomeScreenStyles';
-import useContentful from '../../hooks/use-contentful';
-import {query} from '../../utils/contentful-query';
 import image from '../../assets/images/20200307_F20WinterMerch_MtCurrie_Percival_DSC00066shrp-mobile.jpg';
-import Header from '../Header/Header';
-import HeroImage from '../HeroImage/HeroImage';
+import HeaderComponent from '../Header/Header';
+import HeroImageComponent from '../HeroImage/HeroImage';
 
-const HomeScreen = ({navigation}) => {
-  const {products} = useContentful(query, null);
-  const randomProduct = products[Math.floor(Math.random() * products.length)];
-
+const HomeScreen = ({navigation, randomProduct}) => {
   return (
     <View style={styles.homescreenContainer}>
-      <Header navigation={navigation} />
+      <HeaderComponent navigation={navigation} />
 
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <HeroImage randomProduct={randomProduct} />
+        <HeroImageComponent randomProduct={randomProduct} />
       </ImageBackground>
     </View>
   );

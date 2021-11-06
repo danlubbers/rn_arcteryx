@@ -7,7 +7,13 @@ import Icon from '../Icon/Icon';
 const Header = ({navigation}) => {
   return (
     <View style={styles.headerWrapper}>
-      <Image source={logo} style={styles.logo} />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Home');
+        }}>
+        <Image source={logo} style={styles.logo} />
+      </TouchableOpacity>
+
       <View style={styles.navigationWrapper}>
         <TouchableOpacity
           onPress={() => {

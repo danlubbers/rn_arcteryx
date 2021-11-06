@@ -1,8 +1,18 @@
 import React from 'react';
-import HomeScreen from '../components/HomeScreen/HomeScreen';
+import useContentful from '../hooks/use-contentful';
+import {query} from '../utils/contentful-query';
+import HomeScreenComponent from '../components/HomeScreen/HomeScreen';
 
-const homescreen = ({navigation}) => {
-  return <HomeScreen navigation={navigation} />;
+const Homescreen = ({navigation}) => {
+  const {products} = useContentful(query, null);
+  const randomProduct = products[Math.floor(Math.random() * products.length)];
+
+  return (
+    <HomeScreenComponent
+      navigation={navigation}
+      randomProduct={randomProduct}
+    />
+  );
 };
 
-export default homescreen;
+export default Homescreen;

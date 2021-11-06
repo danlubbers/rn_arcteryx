@@ -1,8 +1,12 @@
 import React from 'react';
-import Products from '../components/Products/Products';
+import useContentful from '../hooks/use-contentful';
+import {query} from '../utils/contentful-query';
+import RenderProducts from '../components/RenderProducts/RenderProducts';
 
-const products = ({navigation}) => {
-  return <Products navigation={navigation} />;
+const Products = ({navigation}) => {
+  const {products} = useContentful(query, null);
+
+  return <RenderProducts navigation={navigation} products={products} />;
 };
 
-export default products;
+export default Products;

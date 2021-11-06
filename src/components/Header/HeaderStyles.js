@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   headerWrapper: {
     paddingLeft: 10,
+    paddingVertical: 30,
     flexDirection: 'row',
     alignItems: 'flex-end',
   },
