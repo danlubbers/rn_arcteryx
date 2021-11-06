@@ -2,19 +2,19 @@ import React from 'react';
 import styles from './RenderProductsStyles';
 import {TouchableOpacity, Image, View, Text, FlatList} from 'react-native';
 
-const RenderProducts = ({products}) => {
+const RenderProducts = ({products, gender}) => {
   const renderItem = ({item}) => {
     const image = item.imagesCollection.items[0].url;
-    // if (item.gender === gender || item.gender === 'unisex') {
-    return (
-      <TouchableOpacity>
-        <View style={styles.itemWrapper}>
-          <Image source={{uri: image}} style={styles.image} />
-          <Text style={styles.titleText}>{item.title}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-    // }
+    if (item.gender === gender || item.gender === 'unisex') {
+      return (
+        <TouchableOpacity>
+          <View style={styles.itemWrapper}>
+            <Image source={{uri: image}} style={styles.image} />
+            <Text style={styles.titleText}>{item.title}</Text>
+          </View>
+        </TouchableOpacity>
+      );
+    }
   };
   return (
     <FlatList

@@ -1,17 +1,25 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View} from 'react-native';
 import styles from './productsStyles';
 import useContentful from '../../hooks/use-contentful';
 import {query} from '../../utils/contentful-query';
-
+import {GlobalContext} from '../../context/Provider';
 import RenderProducts from '../../components/RenderProducts/RenderProducts';
 
 const Products = ({navigation}) => {
+  const {initialState} = useContext(GlobalContext);
   const {products} = useContentful(query, null);
+  console.log(`PRODUCT initialState`, initialState.product.gender);
+
+  const gender = initialState.product.gender;
 
   return (
     <View style={styles.productsContainer}>
-      <RenderProducts navigation={navigation} products={products} />
+      <RenderProducts
+        navigation={navigation}
+        products={products}
+        gender={gender}
+      />
     </View>
   );
 };
