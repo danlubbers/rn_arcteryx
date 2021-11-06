@@ -6,23 +6,7 @@ export default StyleSheet.create({
     paddingTop: 30,
     backgroundColor: '#fff',
   },
-  headerWrapper: {
-    paddingLeft: 10,
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-  },
-  logo: {
-    width: 120,
-    height: 120,
-  },
-  navigationWrapper: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  genderText: {
-    paddingBottom: 23,
-  },
+
   searchText: {
     paddingLeft: 20,
     paddingBottom: 23,
