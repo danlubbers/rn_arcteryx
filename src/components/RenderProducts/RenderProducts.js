@@ -1,13 +1,11 @@
 import React from 'react';
 import styles from './RenderProductsStyles';
 import {TouchableOpacity, Image, View, Text, FlatList} from 'react-native';
-import Header from '../Header/Header';
 
-const RenderProducts = ({navigation, products}) => {
-  console.log(`products`, products);
-
+const RenderProducts = ({products}) => {
   const renderItem = ({item}) => {
     const image = item.imagesCollection.items[0].url;
+    // if (item.gender === gender || item.gender === 'unisex') {
     return (
       <TouchableOpacity>
         <View style={styles.itemWrapper}>
@@ -16,16 +14,14 @@ const RenderProducts = ({navigation, products}) => {
         </View>
       </TouchableOpacity>
     );
+    // }
   };
   return (
-    <View style={styles.productsContainer}>
-      <Header navigation={navigation} />
-      <FlatList
-        data={products}
-        renderItem={renderItem}
-        keyExtractor={item => item.slug}
-      />
-    </View>
+    <FlatList
+      data={products}
+      renderItem={renderItem}
+      keyExtractor={item => item.slug}
+    />
   );
 };
 

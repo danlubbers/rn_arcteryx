@@ -2,6 +2,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   headerWrapper: {
+    paddingBottom: 0,
     paddingLeft: 10,
     paddingVertical: 30,
     flexDirection: 'row',

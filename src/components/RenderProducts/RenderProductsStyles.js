@@ -1,10 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  productsContainer: {
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
   itemWrapper: {
     width: 375,
     alignItems: 'center',

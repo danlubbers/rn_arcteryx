@@ -4,7 +4,7 @@ import styles from './HeaderStyles';
 import logo from '../../assets/logo/arcteryx.png';
 import Icon from '../Icon/Icon';
 
-const Header = ({navigation}) => {
+const Header = ({navigation, setGender}) => {
   return (
     <View style={styles.headerWrapper}>
       <TouchableOpacity
@@ -17,12 +17,14 @@ const Header = ({navigation}) => {
       <View style={styles.navigationWrapper}>
         <TouchableOpacity
           onPress={() => {
+            setGender('mens');
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Mens</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
+            setGender('womens');
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Womens</Text>
