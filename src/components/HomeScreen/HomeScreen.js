@@ -5,10 +5,13 @@ import image from '../../assets/images/20200307_F20WinterMerch_MtCurrie_Percival
 
 import HeroImageComponent from '../HeroImage/HeroImage';
 
-const HomeScreen = ({randomProduct}) => {
+const HomeScreen = ({navigation, randomProduct}) => {
   return (
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-      <HeroImageComponent randomProduct={randomProduct} />
+      <HeroImageComponent
+        randomProduct={randomProduct}
+        navigation={navigation}
+      />
     </ImageBackground>
   );
 };

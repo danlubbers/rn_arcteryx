@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useContext} from 'react';
 import HomeScreen from '../screens/homescreen/homescreen';
+import Product from '../screens/product/product';
 import Products from '../screens/products/products';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -10,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 const Navigator = () => {
   const {initialState} = useContext(GlobalContext);
-  const screenCategory = initialState.globalState.category;
+  // const screenCategory = initialState.globalState.category;
 
   return (
     <NavigationContainer>
@@ -24,8 +25,17 @@ const Navigator = () => {
         <Stack.Screen
           name="Products"
           component={Products}
+          options={
+            {
+              // title: screenCategory,
+            }
+          }
+        />
+        <Stack.Screen
+          name="Product"
+          component={Product}
           options={{
-            title: screenCategory,
+            title: 'Product',
           }}
         />
       </Stack.Navigator>

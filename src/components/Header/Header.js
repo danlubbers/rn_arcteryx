@@ -5,7 +5,7 @@ import logo from '../../assets/logo/arcteryx.png';
 import Icon from '../Icon/Icon';
 import {EDIT_MENS, EDIT_WOMENS} from '../../constants/actionTypes';
 
-const Header = ({navigation, dispatch}) => {
+const Header = ({navigation, globalDispatch}) => {
   return (
     <View style={styles.headerWrapper}>
       <TouchableOpacity
@@ -18,14 +18,14 @@ const Header = ({navigation, dispatch}) => {
       <View style={styles.navigationWrapper}>
         <TouchableOpacity
           onPress={() => {
-            dispatch(EDIT_MENS);
+            globalDispatch(EDIT_MENS);
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Mens</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            dispatch(EDIT_WOMENS);
+            globalDispatch(EDIT_WOMENS);
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Womens</Text>

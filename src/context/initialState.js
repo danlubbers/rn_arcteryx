@@ -1,6 +1,4 @@
 export default {
-  globalState: {
-    category: null,
-    gender: null,
-  },
+  category: null,
+  gender: null,
 };

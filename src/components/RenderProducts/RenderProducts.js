@@ -7,7 +7,7 @@ const RenderProducts = ({products, gender}) => {
     const image = item.imagesCollection.items[0].url;
     if (item.gender === gender || item.gender === 'unisex') {
       return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => console.log(`item.slug`, item.slug)}>
           <View style={styles.itemWrapper}>
             <Image source={{uri: image}} style={styles.image} />
             <Text style={styles.titleText}>{item.title}</Text>
