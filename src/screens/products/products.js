@@ -9,9 +9,8 @@ import RenderProducts from '../../components/RenderProducts/RenderProducts';
 const Products = ({navigation}) => {
   const {initialState} = useContext(GlobalContext);
   const {products} = useContentful(query, null);
-  console.log(`PRODUCT initialState`, initialState.product.gender);
 
-  const gender = initialState.product.gender;
+  const gender = initialState.globalState.gender;
 
   return (
     <View style={styles.productsContainer}>

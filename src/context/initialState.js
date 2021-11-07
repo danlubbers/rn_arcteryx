@@ -1,5 +1,5 @@
 export default {
-  product: {
+  globalState: {
     category: null,
     gender: null,
   },

@@ -3,9 +3,9 @@ import {TouchableOpacity, Image, View, Text} from 'react-native';
 import styles from './HeaderStyles';
 import logo from '../../assets/logo/arcteryx.png';
 import Icon from '../Icon/Icon';
+import {EDIT_MENS, EDIT_WOMENS} from '../../constants/actionTypes';
 
-const Header = ({navigation, productState, dispatch}) => {
-  // console.log(`Header initialState`, productState);
+const Header = ({navigation, dispatch}) => {
   return (
     <View style={styles.headerWrapper}>
       <TouchableOpacity
@@ -18,14 +18,14 @@ const Header = ({navigation, productState, dispatch}) => {
       <View style={styles.navigationWrapper}>
         <TouchableOpacity
           onPress={() => {
-            dispatch('EDIT_MENS');
+            dispatch(EDIT_MENS);
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Mens</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            dispatch('EDIT_WOMENS');
+            dispatch(EDIT_WOMENS);
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Womens</Text>

@@ -12,15 +12,11 @@ const Homescreen = ({navigation}) => {
   const {products} = useContentful(query, null);
   const randomProduct = products[Math.floor(Math.random() * products.length)];
 
-  // console.log(`HOME initialState`, initialState);
+  console.log(`HOME: initialState`, initialState);
 
   return (
     <View style={styles.homescreenContainer}>
-      <HeaderComponent
-        navigation={navigation}
-        productState={initialState}
-        dispatch={initialDispatch}
-      />
+      <HeaderComponent navigation={navigation} dispatch={initialDispatch} />
       <HomeScreenComponent
         navigation={navigation}
         randomProduct={randomProduct}
