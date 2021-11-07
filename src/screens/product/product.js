@@ -6,12 +6,12 @@ import {query} from '../../utils/contentful-query';
 import {GlobalContext} from '../../context/Provider';
 import RenderProduct from '../../components/RenderProduct/RenderProduct';
 
-const Product = ({navigation, slug}) => {
-  const {initialState} = useContext(GlobalContext);
+const Product = ({navigation}) => {
+  const {globalState} = useContext(GlobalContext);
   const {products} = useContentful(query, null);
   // console.log(`products`, products);
-  console.log(`slug`, slug);
-  const gender = initialState.globalState.gender;
+
+  const gender = globalState.gender;
 
   return (
     <View style={styles.productsContainer}>

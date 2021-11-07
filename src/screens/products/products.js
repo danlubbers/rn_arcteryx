@@ -9,7 +9,6 @@ import RenderProducts from '../../components/RenderProducts/RenderProducts';
 const Products = ({navigation}) => {
   const {globalState} = useContext(GlobalContext);
   const {products} = useContentful(query, null);
-  console.log(`PRODUCTS SCREEN : initialState`, globalState);
   const gender = globalState.gender;
 
   return (
