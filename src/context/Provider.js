@@ -1,8 +1,8 @@
 import React, {createContext, useReducer} from 'react';
 import globalReducer from './reducers/globalReducer';
-import productsReducer from './reducers/productsReducer';
 import initialGlobalState from './initialState/globallState';
-import productInitialState from './initialState/productsState';
+import {query} from '../utils/contentful-query';
+import useContentful from '../hooks/use-contentful';
 
 export const GlobalContext = createContext();
 
@@ -11,14 +11,11 @@ const GlobalProvider = ({children}) => {
     globalReducer,
     initialGlobalState,
   );
-  const [productsState, productsDispatch] = useReducer(
-    productsReducer,
-    productInitialState,
-  );
+
+  const {products} = useContentful(query, null);
 
   return (
-    <GlobalContext.Provider
-      value={{globalState, globalDispatch, productsState, productsDispatch}}>
+    <GlobalContext.Provider value={{globalState, globalDispatch, products}}>
       {children}
     </GlobalContext.Provider>
   );
