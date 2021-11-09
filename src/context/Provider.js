@@ -11,9 +11,9 @@ const GlobalProvider = ({children}) => {
     globalReducer,
     initialGlobalState,
   );
-
+  console.log(`globalState`, globalState);
   const {products} = useContentful(query, null);
-
+  // console.log(`globalState`, globalState);
   return (
     <GlobalContext.Provider value={{globalState, globalDispatch, products}}>
       {children}

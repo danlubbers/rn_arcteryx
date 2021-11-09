@@ -9,6 +9,7 @@ import HomeScreenComponent from '../../components/HomeScreen/HomeScreen';
 const Homescreen = ({navigation}) => {
   const {globalDispatch, products} = useContext(GlobalContext);
   const randomProduct = products[Math.floor(Math.random() * products.length)];
+  // console.log(`randomProduct`, randomProduct.slug);
 
   return (
     <View style={styles.homescreenContainer}>
@@ -19,6 +20,7 @@ const Homescreen = ({navigation}) => {
       <HomeScreenComponent
         navigation={navigation}
         randomProduct={randomProduct}
+        globalDispatch={globalDispatch}
       />
     </View>
   );
