@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 import styles from './HeroImageStyles';
 import ImageComponent from '../Image/Image';
-import {EDIT_SLUG} from '../../constants/actionTypes';
+import {FILTERED_PRODUCT} from '../../constants/actionTypes';
 
 const HeroImage = ({navigation, randomProduct, globalDispatch}) => {
   // console.log(`randomProduct`, randomProduct.slug);
@@ -10,7 +10,7 @@ const HeroImage = ({navigation, randomProduct, globalDispatch}) => {
     <TouchableOpacity
       style={styles.heroWrapper}
       onPress={() => {
-        globalDispatch({type: EDIT_SLUG, payload: {slug: randomProduct.slug}});
+        globalDispatch({type: FILTERED_PRODUCT, payload: randomProduct});
         navigation.navigate('Product');
       }}>
       <Text style={styles.titleText}>{randomProduct?.title}</Text>

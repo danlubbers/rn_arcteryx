@@ -1,6 +1,11 @@
-import {EDIT_MENS, EDIT_WOMENS, EDIT_SLUG} from '../../constants/actionTypes';
+import {
+  EDIT_MENS,
+  EDIT_WOMENS,
+  FILTERED_PRODUCT,
+} from '../../constants/actionTypes';
 
 const globalReducer = (state, {type, payload}) => {
+  console.log(`payload`, payload);
   switch (type) {
     case EDIT_MENS:
       return {
@@ -14,12 +19,9 @@ const globalReducer = (state, {type, payload}) => {
         gender: 'womens',
         category: 'Womens Products',
       };
-    case EDIT_SLUG:
+    case FILTERED_PRODUCT:
       return {
-        ...state,
-        gender: null,
-        category: null,
-        slug: payload.slug,
+        filteredProduct: payload,
       };
   }
 };

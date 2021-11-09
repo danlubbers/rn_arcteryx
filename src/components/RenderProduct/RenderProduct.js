@@ -1,15 +1,14 @@
 import React from 'react';
 import styles from './RenderProductStyles';
-import {TouchableOpacity, Image, View, Text, FlatList} from 'react-native';
+import {Image, View, Text} from 'react-native';
 
-const RenderProduct = ({product, gender}) => {
-  // console.log(`product`, product);
-  // const image = product.imagesCollection.items[0].url;
+const RenderProduct = ({filteredProduct}) => {
+  const image = filteredProduct.imagesCollection.items[0].url;
 
   return (
     <View style={styles.itemWrapper}>
-      {/* <Image source={{uri: image}} style={styles.image} />
-      <Text style={styles.titleText}>{product.title}</Text> */}
+      <Image source={{uri: image}} style={styles.image} />
+      <Text style={styles.titleText}>{filteredProduct.title}</Text>
     </View>
   );
 };

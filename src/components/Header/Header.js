@@ -18,14 +18,14 @@ const Header = ({navigation, globalDispatch}) => {
       <View style={styles.navigationWrapper}>
         <TouchableOpacity
           onPress={() => {
-            globalDispatch(EDIT_MENS);
+            globalDispatch({type: EDIT_MENS});
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Mens</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            globalDispatch(EDIT_WOMENS);
+            globalDispatch({type: EDIT_WOMENS});
             navigation.navigate('Products');
           }}>
           <Text style={styles.genderText}>Womens</Text>
