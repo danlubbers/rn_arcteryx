@@ -1,13 +1,18 @@
 import React from 'react';
 import styles from './RenderProductsStyles';
 import {TouchableOpacity, Image, View, Text, FlatList} from 'react-native';
+import {FILTERED_PRODUCT} from '../../constants/actionTypes';
 
-const RenderProducts = ({products, gender}) => {
+const RenderProducts = ({navigation, products, gender, globalDispatch}) => {
   const renderItem = ({item}) => {
     const image = item.imagesCollection.items[0].url;
     if (item.gender === gender || item.gender === 'unisex') {
       return (
-        <TouchableOpacity onPress={() => console.log(`item.slug`, item.slug)}>
+        <TouchableOpacity
+          onPress={() => {
+            globalDispatch({type: FILTERED_PRODUCT, payload: item});
+            navigation.navigate('Product');
+          }}>
           <View style={styles.itemWrapper}>
             <Image source={{uri: image}} style={styles.image} />
             <Text style={styles.titleText}>{item.title}</Text>

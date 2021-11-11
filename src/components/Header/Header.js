@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {TouchableOpacity, Image, View, Text} from 'react-native';
 import styles from './HeaderStyles';
 import logo from '../../assets/logo/arcteryx.png';
 import Icon from '../Icon/Icon';
+import {GlobalContext} from '../../context/Provider';
 import {EDIT_MENS, EDIT_WOMENS} from '../../constants/actionTypes';
 
-const Header = ({navigation, globalDispatch}) => {
+const Header = ({navigation}) => {
+  const {globalDispatch} = useContext(GlobalContext);
   return (
     <View style={styles.headerWrapper}>
       <TouchableOpacity

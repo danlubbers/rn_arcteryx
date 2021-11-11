@@ -10,8 +10,9 @@ import {GlobalContext} from '../context/Provider';
 const Stack = createNativeStackNavigator();
 
 const Navigator = () => {
-  const {initialState} = useContext(GlobalContext);
-  // const screenCategory = initialState.globalState.category;
+  const {globalState} = useContext(GlobalContext);
+  const screenCategory = globalState.category;
+  const productTitle = globalState?.filteredProduct.title;
 
   return (
     <NavigationContainer>
@@ -25,17 +26,15 @@ const Navigator = () => {
         <Stack.Screen
           name="Products"
           component={Products}
-          options={
-            {
-              // title: screenCategory,
-            }
-          }
+          options={{
+            title: screenCategory,
+          }}
         />
         <Stack.Screen
           name="Product"
           component={Product}
           options={{
-            title: 'Product',
+            title: productTitle,
           }}
         />
       </Stack.Navigator>

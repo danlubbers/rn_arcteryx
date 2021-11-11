@@ -7,7 +7,7 @@ import {GlobalContext} from '../../context/Provider';
 import RenderProducts from '../../components/RenderProducts/RenderProducts';
 
 const Products = ({navigation}) => {
-  const {globalState} = useContext(GlobalContext);
+  const {globalState, globalDispatch} = useContext(GlobalContext);
   const {products} = useContentful(query, null);
   const gender = globalState.gender;
 
@@ -17,6 +17,7 @@ const Products = ({navigation}) => {
         navigation={navigation}
         products={products}
         gender={gender}
+        globalDispatch={globalDispatch}
       />
     </View>
   );

@@ -5,7 +5,6 @@ import {
 } from '../../constants/actionTypes';
 
 const globalReducer = (state, {type, payload}) => {
-  console.log(`payload`, payload);
   switch (type) {
     case EDIT_MENS:
       return {
@@ -21,6 +20,8 @@ const globalReducer = (state, {type, payload}) => {
       };
     case FILTERED_PRODUCT:
       return {
+        ...state,
+        gender: payload.gender,
         filteredProduct: payload,
       };
   }

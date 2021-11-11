@@ -8,7 +8,7 @@ const RenderProduct = ({filteredProduct}) => {
   return (
     <View style={styles.itemWrapper}>
       <Image source={{uri: image}} style={styles.image} />
-      <Text style={styles.titleText}>{filteredProduct.title}</Text>
+      {/* <Text style={styles.titleText}>{filteredProduct.title}</Text> */}
     </View>
   );
 };

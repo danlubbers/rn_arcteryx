@@ -1,6 +1,6 @@
 import React, {createContext, useReducer} from 'react';
 import globalReducer from './reducers/globalReducer';
-import initialGlobalState from './initialState/globallState';
+import initialGlobalState from './initialState/globalState';
 import {query} from '../utils/contentful-query';
 import useContentful from '../hooks/use-contentful';
 
@@ -12,6 +12,7 @@ const GlobalProvider = ({children}) => {
     initialGlobalState,
   );
 
+  // console.log(`PROVIDER:`, globalState);
   const {products} = useContentful(query, null);
   return (
     <GlobalContext.Provider value={{globalState, globalDispatch, products}}>
