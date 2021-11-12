@@ -22,7 +22,6 @@ const globalReducer = (state, {type, payload}) => {
       return {
         ...state,
         gender: payload.gender,
-        // category: payload.category,
         filteredProduct: payload,
       };
   }

@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View} from 'react-native';
 import styles from './searchStyles';
 import SearchProducts from '../../components/SearchProducts/SearchProducts';
 import RenderProducts from '../../components/RenderProducts/RenderProducts';
+import {GlobalContext} from '../../context/Provider';
 import useContentful from '../../hooks/use-contentful';
 import {query} from '../../utils/contentful-query';
 
-const Search = () => {
+const Search = ({navigation}) => {
   const {products} = useContentful(query);
   const [inputValue, setInputValue] = useState('');
+  const {globalDispatch} = useContext(GlobalContext);
 
   let filteredProductsArray = [];
   if (inputValue) {
@@ -28,7 +30,11 @@ const Search = () => {
         inputValue={inputValue}
         setInputValue={text => setInputValue(text)}
       />
-      <RenderProducts filteredProductsArray={filteredProductsArray[0]} />
+      <RenderProducts
+        filteredProductsArray={filteredProductsArray[0]}
+        navigation={navigation}
+        globalDispatch={globalDispatch}
+      />
     </View>
   );
 };
