@@ -2,8 +2,9 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   itemWrapper: {
-    width: 375,
+    width: '100%',
     alignItems: 'center',
+    backgroundColor: '#fff',
   },
   image: {
     marginTop: 20,

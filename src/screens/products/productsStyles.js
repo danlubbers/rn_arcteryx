@@ -1,7 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  productsContainer: {
+  searchContainer: {
+    height: '100%',
     alignItems: 'center',
     backgroundColor: '#fff',
   },

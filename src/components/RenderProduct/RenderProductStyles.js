@@ -2,8 +2,10 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   itemWrapper: {
-    width: 375,
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
+    backgroundColor: '#fff',
   },
   description: {
     textAlign: 'center',

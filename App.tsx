@@ -4,7 +4,7 @@ import GlobalProvider from './src/context/Provider';
 import Navigator from './src/navigation/Navigator';
 const App = () => {
   return (
-    <GlobalProvider children={undefined}>
+    <GlobalProvider>
       <Navigator />
     </GlobalProvider>
   );
