@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import {TouchableOpacity, Image, View} from 'react-native';
+import {View} from 'react-native';
 import styles from './productStyles';
 import {GlobalContext} from '../../context/Provider';
 import RenderProduct from '../../components/RenderProduct/RenderProduct';

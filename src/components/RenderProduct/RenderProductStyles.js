@@ -27,7 +27,6 @@ export default StyleSheet.create({
     marginBottom: 10,
     fontSize: 17,
   },
-  thumbailWrapper: {},
   thumbnailImage: {
     margin: 5,
     width: 60,
