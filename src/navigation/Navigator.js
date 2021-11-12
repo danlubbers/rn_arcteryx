@@ -3,6 +3,7 @@ import React, {useContext} from 'react';
 import HomeScreen from '../screens/homescreen/homescreen';
 import Product from '../screens/product/product';
 import Products from '../screens/products/products';
+import Search from '../screens/search/search';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {GlobalContext} from '../context/Provider';
@@ -35,6 +36,13 @@ const Navigator = () => {
           component={Product}
           options={{
             title: productTitle,
+          }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={Search}
+          options={{
+            title: 'Search For Products',
           }}
         />
       </Stack.Navigator>
