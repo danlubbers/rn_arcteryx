@@ -8,11 +8,11 @@ const RenderProducts = ({
   products,
   gender,
   globalDispatch,
-  filteredProductsArray,
+  filteredProductsArr,
 }) => {
   const renderItem = ({item}) => {
     const image = item.imagesCollection.items[0].url;
-    if (!filteredProductsArray) {
+    if (!filteredProductsArr) {
       if (item.gender === gender || item.gender === 'unisex') {
         return (
           <TouchableOpacity
@@ -28,7 +28,7 @@ const RenderProducts = ({
         );
       }
     }
-    if (filteredProductsArray) {
+    if (filteredProductsArr) {
       return (
         <TouchableOpacity
           onPress={() => {
@@ -46,7 +46,7 @@ const RenderProducts = ({
 
   return (
     <FlatList
-      data={products || filteredProductsArray}
+      data={products || filteredProductsArr}
       renderItem={renderItem}
       keyExtractor={item => item.slug}
     />

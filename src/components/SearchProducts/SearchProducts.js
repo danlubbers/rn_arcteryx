@@ -1,8 +1,12 @@
 import React from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, Text} from 'react-native';
 import styles from './SearchProductsStyles';
 
-const SearchProducts = ({inputValue, setInputValue}) => {
+const SearchProducts = ({
+  inputValue,
+  setInputValue,
+  filteredProductslength,
+}) => {
   return (
     <View style={styles.searchProductContainer}>
       <TextInput
@@ -11,6 +15,9 @@ const SearchProducts = ({inputValue, setInputValue}) => {
         value={inputValue}
         placeholder="Ex. Mens Alpha SV"
       />
+      <Text style={styles.numOfProductsText}>
+        {filteredProductslength} products found!
+      </Text>
     </View>
   );
 };

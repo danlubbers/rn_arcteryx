@@ -12,7 +12,8 @@ const Search = ({navigation}) => {
   const [inputValue, setInputValue] = useState('');
   const {globalDispatch} = useContext(GlobalContext);
 
-  let filteredProductsArray = [];
+  let filteredProductsArr = [];
+  let filteredProductsLength = 0;
   if (inputValue) {
     const filteredProducts = products.filter(item => {
       return inputValue.split(' ').every(word => {
@@ -21,7 +22,8 @@ const Search = ({navigation}) => {
         return productTitle.match(regex);
       });
     });
-    filteredProductsArray.push(filteredProducts);
+    filteredProductsArr.push(filteredProducts);
+    filteredProductsLength = filteredProducts.length;
   }
 
   return (
@@ -29,9 +31,10 @@ const Search = ({navigation}) => {
       <SearchProducts
         inputValue={inputValue}
         setInputValue={text => setInputValue(text)}
+        filteredProductslength={filteredProductsLength}
       />
       <RenderProducts
-        filteredProductsArray={filteredProductsArray[0]}
+        filteredProductsArr={filteredProductsArr[0]}
         navigation={navigation}
         globalDispatch={globalDispatch}
       />
